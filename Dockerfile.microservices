@@ -1,0 +1,17 @@
+FROM amazoncorretto:8-alpine3.16-jdk
+
+# Copy microservices jar files to /usr/src
+COPY aline-account-microservice/account-microservice/target/account-microservice-0.1.0.jar /usr/src/
+COPY aline-bank-microservice/bank-microservice/target/bank-microservice-0.1.0.jar /usr/src/
+COPY aline-transaction-microservice/transaction-microservice/target/transaction-microservice-0.1.0.jar /usr/src/
+COPY aline-underwriter-microservice/underwriter-microservice/target/underwriter-microservice-0.1.0.jar /usr/src/
+COPY aline-user-microservice/user-microservice/target/user-microservice-0.1.0.jar /usr/src/
+
+# Copy start script
+COPY start.sh /usr/src/
+
+# Set the working directory
+WORKDIR /usr/src/
+
+# Set the start script as the entrypoint
+ENTRYPOINT ["sh", "start.sh"]

@@ -1,0 +1,17 @@
+/Users/smoothstack/Desktop/Assignments/Capstone Project/aline-user-microservice/user-microservice/src/main/java/com/aline/usermicroservice/service/ApplicantService.java
+/Users/smoothstack/Desktop/Assignments/Capstone Project/aline-user-microservice/user-microservice/src/main/java/com/aline/usermicroservice/authorization/UserAuthorization.java
+/Users/smoothstack/Desktop/Assignments/Capstone Project/aline-user-microservice/user-microservice/src/main/java/com/aline/usermicroservice/service/function/HandleOtpBeforeHash.java
+/Users/smoothstack/Desktop/Assignments/Capstone Project/aline-user-microservice/user-microservice/src/main/java/com/aline/usermicroservice/config/BeanConfig.java
+/Users/smoothstack/Desktop/Assignments/Capstone Project/aline-user-microservice/user-microservice/src/main/java/com/aline/usermicroservice/service/AvatarService.java
+/Users/smoothstack/Desktop/Assignments/Capstone Project/aline-user-microservice/user-microservice/src/main/java/com/aline/usermicroservice/service/registration/UserRegistrationHandler.java
+/Users/smoothstack/Desktop/Assignments/Capstone Project/aline-user-microservice/user-microservice/src/main/java/com/aline/usermicroservice/config/WebSecurityConfig.java
+/Users/smoothstack/Desktop/Assignments/Capstone Project/aline-user-microservice/user-microservice/src/main/java/com/aline/usermicroservice/controller/UserController.java
+/Users/smoothstack/Desktop/Assignments/Capstone Project/aline-user-microservice/user-microservice/src/main/java/com/aline/usermicroservice/service/UserConfirmationService.java
+/Users/smoothstack/Desktop/Assignments/Capstone Project/aline-user-microservice/user-microservice/src/main/java/com/aline/usermicroservice/service/registration/MemberUserRegistrationHandler.java
+/Users/smoothstack/Desktop/Assignments/Capstone Project/aline-user-microservice/user-microservice/src/main/java/com/aline/usermicroservice/UserMicroserviceApplication.java
+/Users/smoothstack/Desktop/Assignments/Capstone Project/aline-user-microservice/user-microservice/src/main/java/com/aline/usermicroservice/service/function/UserRegistrationConsumer.java
+/Users/smoothstack/Desktop/Assignments/Capstone Project/aline-user-microservice/user-microservice/src/main/java/com/aline/usermicroservice/service/MemberService.java
+/Users/smoothstack/Desktop/Assignments/Capstone Project/aline-user-microservice/user-microservice/src/main/java/com/aline/usermicroservice/service/ResetPasswordService.java
+/Users/smoothstack/Desktop/Assignments/Capstone Project/aline-user-microservice/user-microservice/src/main/java/com/aline/usermicroservice/controller/RootController.java
+/Users/smoothstack/Desktop/Assignments/Capstone Project/aline-user-microservice/user-microservice/src/main/java/com/aline/usermicroservice/service/UserService.java
+/Users/smoothstack/Desktop/Assignments/Capstone Project/aline-user-microservice/user-microservice/src/main/java/com/aline/usermicroservice/service/registration/AdminUserRegistrationHandler.java

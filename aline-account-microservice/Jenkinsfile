@@ -1,0 +1,41 @@
+pipeline {
+    agent {
+        label 'main'
+    }
+    environment {
+        ECR_REPO_URL = credentials('ecr-url')
+        ECR_REGISTRY_URL = credentials('ecr-registry-url')
+        TAG = 'account'
+    }
+    stages {
+        stage('StaticAnalysis') {
+            steps {
+                sh 'echo Statis Analysis'
+            }
+        }
+        stage('MavenBuild') {
+            steps {
+                sh 'mvn package -DskipTests'
+            }
+        }
+        stage('DockerBuild') {
+            steps {
+                sh 'docker build --tag "$ECR_REPO_URL:$TAG" .'
+                sh 'docker image ls'
+
+            }
+        }
+        stage('DockerPush') {
+            steps {
+                sh 'aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin $ECR_REGISTRY_URL'
+                sh 'docker push $ECR_REPO_URL:$TAG'
+            }
+        }
+        stage('DockerCleanup') {
+            steps {
+                sh 'docker image rm $ECR_REPO_URL:$TAG'
+            }
+        }
+        
+    }
+}

@@ -1,0 +1,8 @@
+FROM amazoncorretto:8-alpine3.16-jdk
+
+COPY aline-user-microservice/user-microservice/target/user-microservice-0.1.0.jar /usr/src/
+
+WORKDIR /usr/src/
+
+# Set the start script as the entrypoint
+ENTRYPOINT ["java", "-jar", "user-microservice-0.1.0.jar"]

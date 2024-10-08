@@ -1,0 +1,3 @@
+member-dashboard:4200
+landing-portal:8081
+admin-portal:3000

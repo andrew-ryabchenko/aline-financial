@@ -1,0 +1,8 @@
+FROM amazoncorretto:8-alpine3.16-jdk
+
+COPY account-microservice/target/account-microservice-0.1.0.jar /usr/src/
+
+WORKDIR /usr/src/
+
+# Set the start script as the entrypoint
+ENTRYPOINT ["java", "-jar", "account-microservice-0.1.0.jar"]

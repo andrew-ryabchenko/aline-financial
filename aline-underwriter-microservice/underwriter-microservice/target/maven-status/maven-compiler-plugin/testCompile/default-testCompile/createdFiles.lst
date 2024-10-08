@@ -1,0 +1,9 @@
+com/aline/underwritermicroservice/controller/ApplicantControllerTest.class
+com/aline/underwritermicroservice/controller/ApplicationControllerTest.class
+com/aline/underwritermicroservice/SmokeTest.class
+com/aline/underwritermicroservice/service/ApplicationServiceTest.class
+com/aline/underwritermicroservice/controller/ApplicantControllerTest$ApplicantSearchTest.class
+com/aline/underwritermicroservice/config/TestConfig.class
+com/aline/underwritermicroservice/service/ApplicantServiceTest.class
+com/aline/underwritermicroservice/controller/RootControllerTest.class
+com/aline/underwritermicroservice/controller/ApplicantControllerTest$CreateApplicantStatusIsBadRequest.class

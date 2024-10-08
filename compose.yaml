@@ -1,0 +1,71 @@
+services:
+  mysql:
+    build: database-setup/
+    #Healthcheck configurations
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping"]
+      interval: 1s
+      start_interval: 1s
+      start_period: 2s
+      retries: 7
+    environment:
+      MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
+    volumes:
+      - ./mysql_data:/var/lib/mysql
+    #Port bindings are for testing purposes and will be removed in production
+    ports:
+      - 3306:3306
+    networks:
+      - back-tier
+  
+  microservices:
+    build: 
+      context: .
+      dockerfile: Dockerfile.microservices
+    #Only start microservices after mysql is healthy and running
+    depends_on:
+      mysql:
+        condition: service_healthy
+    #Port bindings are for testing purposes and will be removed in production
+    ports:
+      - 8080:8080
+      - 8071:8071
+      - 8072:8072
+      - 8073:8073
+      - 8083:8083
+    env_file:
+      - .env
+    networks:
+      - back-tier
+
+  gateway:
+    build: 
+      context: .
+      dockerfile: Dockerfile.gateway
+    ports:
+      - 80:80
+    environment:
+      APP_PORT: 80
+    env_file:
+      - .env
+    networks:
+      - back-tier
+      - front-tier
+
+  frontends:
+    build: 
+      context: .
+      dockerfile: Dockerfile.frontends
+    ports:
+      - 8081:8081
+      - 3000:3000
+      - 4200:4200
+    networks:
+      - front-tier
+      - back-tier
+
+networks:
+  back-tier:
+    driver: bridge
+  front-tier:
+    driver: bridge

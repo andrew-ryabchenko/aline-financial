@@ -1,0 +1,17 @@
+FROM nginx:latest
+
+RUN rm -rf usr/share/nginx/html
+
+# Transfer the build files to the nginx server
+
+# admin-portal
+COPY aline-admin-portal/build /usr/share/nginx/html/admin-portal
+
+# member-dashboard
+COPY member-dashboard/dist/aline-member-dashboard /usr/share/nginx/html/member-dashboard
+
+# landing-portal
+COPY aline-landing-portal/build /usr/share/nginx/html/landing-portal
+
+# Transfer the nginx configuration file
+COPY nginx.conf /etc/nginx/nginx.conf
